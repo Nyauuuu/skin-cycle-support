@@ -1,141 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkinCycle - 技术支持</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>潮汐肌语 Support</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      color-scheme: light dark;
+      --accent: #b97862;
+      --text: #2c211d;
+      --muted: #746861;
+      --surface: #fff8f3;
+      --line: rgba(120, 90, 75, .18);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f4ece7;
+        --muted: #c8bbb4;
+        --surface: #181411;
+        --line: rgba(255, 236, 225, .16);
+      }
+    }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
-      background: #FAF4ED;
-      color: #2C2C2C;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+      background: var(--surface);
+      color: var(--text);
+      line-height: 1.65;
     }
-    .container {
-      background: #FFFFFF;
-      border-radius: 20px;
-      padding: 48px 40px;
-      max-width: 520px;
-      width: 100%;
-      box-shadow: 0 4px 24px rgba(178, 84, 90, 0.08);
-    }
-    .logo {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, #B2545A, #D4847C);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      font-size: 28px;
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 22px;
     }
     h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-    }
-    .subtitle {
-      color: #888;
-      font-size: 15px;
-      margin-bottom: 32px;
-    }
-    .version {
-      display: inline-block;
-      background: #F5F0EB;
-      color: #B2545A;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 100px;
-      margin-bottom: 32px;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #F0EBE6;
-      margin: 32px 0;
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: clamp(32px, 6vw, 52px);
+      line-height: 1.08;
     }
     h2 {
+      margin-top: 34px;
+      font-size: 20px;
+    }
+    p, li {
+      color: var(--muted);
       font-size: 16px;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-bottom: 12px;
     }
-    p {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #555;
-      margin-bottom: 16px;
+    a {
+      color: var(--accent);
+      font-weight: 700;
     }
-    .email {
-      display: inline-block;
-      background: #B2545A;
-      color: white;
-      font-size: 15px;
-      font-weight: 500;
-      padding: 12px 24px;
-      border-radius: 100px;
-      text-decoration: none;
-      margin-top: 8px;
-    }
-    .email:hover { background: #9A454B; }
-    .links {
-      margin-top: 20px;
-    }
-    .links a {
-      color: #B2545A;
-      font-size: 14px;
-      text-decoration: none;
-    }
-    .links a:hover { text-decoration: underline; }
-    .disclaimer {
-      background: #F9F5F2;
-      border-left: 3px solid #B2545A;
-      padding: 16px 20px;
-      border-radius: 0 12px 12px 0;
-      margin-top: 32px;
-    }
-    .disclaimer-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #B2545A;
-      margin-bottom: 6px;
-    }
-    .disclaimer p {
-      font-size: 13px;
-      color: #888;
-      margin: 0;
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      background: rgba(255,255,255,.35);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">🌿</div>
-    <h1>SkinCycle</h1>
-    <p class="subtitle">护肤日记 · 周期追踪</p>
-    <span class="version">Version 1.0</span>
+  <main>
+    <h1>潮汐肌语 Support</h1>
+    <p>Tidal Skin / 潮汐肌语是一款本地优先的周期护肤日记。如果你在使用中遇到问题，可以通过本页信息联系我们。</p>
 
-    <hr>
+    <section class="card">
+      <h2>Contact Support</h2>
+      <p>支持邮箱：<a href="mailto:seancheng_chn@icloud.com">seancheng_chn@icloud.com</a></p>
+      <p>你也可以在邮件中附上设备型号、iOS / iPadOS 版本、App 版本号和问题截图，方便我们更快定位问题。</p>
+    </section>
 
-    <h2>联系我们</h2>
-    <p>如遇问题或建议，欢迎通过以下方式联系我们：</p>
-    <p>我们会尽快回复。</p>
-    <a class="email" href="mailto:seancheng_chn@icloud.com">联系支持团队</a>
+    <h2>Common Questions</h2>
+    <ul>
+      <li>购买或订阅问题：请先在 App 的「设置 → 升级 Pro → 恢复购买」同步状态。</li>
+      <li>HealthKit / Apple Watch 数据：请确认系统「健康」权限已允许潮汐肌语读取对应数据。</li>
+      <li>天气建议：天气信息来自 Apple WeatherKit，需要允许定位权限后才会更新。</li>
+      <li>隐私与照片：照片分析在设备端完成，不会发送到第三方 AI 服务。</li>
+    </ul>
 
-    <div class="links">
-      <a href="privacy.html">隐私政策</a>
-    </div>
-
-    <div class="disclaimer">
-      <div class="disclaimer-title">⚠️ 免责声明</div>
-      <p>本应用不构成医疗建议。皮肤问题、妇科健康问题请咨询专业医生。本应用仅供记录和参考，不能替代专业医疗诊断。</p>
-    </div>
-  </div>
+    <h2>Legal</h2>
+    <p><a href="./privacy.html">Privacy Policy</a></p>
+    <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a></p>
+  </main>
 </body>
 </html>
