@@ -7,80 +7,241 @@
   <style>
     :root {
       color-scheme: light dark;
-      --accent: #b97862;
-      --text: #2c211d;
-      --muted: #746861;
-      --surface: #fff8f3;
-      --line: rgba(120, 90, 75, .18);
+      --paper: #fff9f5;
+      --paper-soft: #f7eee8;
+      --ink: #2b211d;
+      --muted: #756a63;
+      --accent: #ba7964;
+      --accent-deep: #8f5849;
+      --sage: #dfe7dc;
+      --rose: #ead3ca;
+      --line: rgba(117, 88, 73, .18);
+      --shadow: rgba(92, 64, 50, .12);
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --text: #f4ece7;
-        --muted: #c8bbb4;
-        --surface: #181411;
-        --line: rgba(255, 236, 225, .16);
+        --paper: #171310;
+        --paper-soft: #211a16;
+        --ink: #f5eee9;
+        --muted: #c9bbb3;
+        --accent: #d4947d;
+        --accent-deep: #efb09a;
+        --sage: #263026;
+        --rose: #34231f;
+        --line: rgba(255, 232, 218, .16);
+        --shadow: rgba(0, 0, 0, .35);
       }
     }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
-      background: var(--surface);
-      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", sans-serif;
+      background:
+        radial-gradient(circle at 16% 10%, var(--rose), transparent 30%),
+        radial-gradient(circle at 88% 18%, var(--sage), transparent 28%),
+        linear-gradient(180deg, var(--paper), var(--paper-soft));
+      color: var(--ink);
       line-height: 1.65;
     }
+
     main {
-      max-width: 760px;
+      width: min(920px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 56px 22px;
+      padding: 56px 0 72px;
     }
+
+    .hero {
+      display: grid;
+      gap: 22px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, .54);
+      box-shadow: 0 22px 60px var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .hero { background: rgba(30, 24, 20, .72); }
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, rgba(186, 121, 100, .22), rgba(223, 231, 220, .72));
+      border: 1px solid var(--line);
+      color: var(--accent-deep);
+      font: 700 30px Georgia, "Times New Roman", serif;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--accent-deep);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
     h1 {
-      margin: 0 0 8px;
+      margin: 0;
+      max-width: 720px;
       font-family: Georgia, "Times New Roman", "Songti SC", serif;
-      font-size: clamp(32px, 6vw, 52px);
-      line-height: 1.08;
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.02;
+      letter-spacing: 0;
     }
+
+    .lead {
+      margin: 0;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(186, 121, 100, .22);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, .52);
+      color: var(--accent-deep);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 720px) {
+      main { width: min(100% - 24px, 920px); padding-top: 28px; }
+      .hero { padding: 24px; border-radius: 26px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      background: rgba(255, 255, 255, .48);
+      box-shadow: 0 12px 34px rgba(92, 64, 50, .08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .card, .button.secondary { background: rgba(30, 24, 20, .64); }
+    }
+
     h2 {
-      margin-top: 34px;
-      font-size: 20px;
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: 24px;
+      letter-spacing: 0;
     }
+
     p, li {
       color: var(--muted);
       font-size: 16px;
     }
-    a {
-      color: var(--accent);
-      font-weight: 700;
+
+    ul {
+      padding-left: 20px;
+      margin: 12px 0 0;
     }
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 20px;
-      background: rgba(255,255,255,.35);
+
+    a {
+      color: var(--accent-deep);
+      font-weight: 800;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <main>
-    <h1>潮汐肌语 Support</h1>
-    <p>Tidal Skin / 潮汐肌语是一款本地优先的周期护肤日记。如果你在使用中遇到问题，可以通过本页信息联系我们。</p>
-
-    <section class="card">
-      <h2>Contact Support</h2>
-      <p>支持邮箱：<a href="mailto:seancheng_chn@icloud.com">seancheng_chn@icloud.com</a></p>
-      <p>你也可以在邮件中附上设备型号、iOS / iPadOS 版本、App 版本号和问题截图，方便我们更快定位问题。</p>
+    <section class="hero">
+      <div class="brand-row">
+        <div class="mark" aria-hidden="true">汐</div>
+        <div>
+          <p class="eyebrow">Tidal Skin Support</p>
+          <h1>潮汐肌语支持中心</h1>
+        </div>
+      </div>
+      <p class="lead">皮肤会说话，潮汐听得见。这里提供产品支持、隐私说明和常见问题，帮助你更安心地记录自己的身体节律。</p>
+      <div class="actions">
+        <a class="button" href="mailto:seancheng_chn@icloud.com">联系支持</a>
+        <a class="button secondary" href="./privacy.html">查看隐私政策</a>
+      </div>
     </section>
 
-    <h2>Common Questions</h2>
-    <ul>
-      <li>购买或订阅问题：请先在 App 的「设置 → 升级 Pro → 恢复购买」同步状态。</li>
-      <li>HealthKit / Apple Watch 数据：请确认系统「健康」权限已允许潮汐肌语读取对应数据。</li>
-      <li>天气建议：天气信息来自 Apple WeatherKit，需要允许定位权限后才会更新。</li>
-      <li>隐私与照片：照片分析在设备端完成，不会发送到第三方 AI 服务。</li>
-    </ul>
+    <section class="grid">
+      <article class="card">
+        <h2>联系方式</h2>
+        <p>支持邮箱：<a href="mailto:seancheng_chn@icloud.com">seancheng_chn@icloud.com</a></p>
+        <p>为了更快定位问题，建议在邮件中附上设备型号、iOS / iPadOS 版本、App 版本号，以及相关截图或录屏。</p>
+      </article>
 
-    <h2>Legal</h2>
-    <p><a href="./privacy.html">Privacy Policy</a></p>
-    <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a></p>
+      <article class="card">
+        <h2>身体数据由你掌握</h2>
+        <p>潮汐肌语以本地优先为原则。皮肤照片、记录和健康数据不会发送到第三方 AI 服务，也不会用于广告追踪。</p>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>常见问题</h2>
+        <ul>
+          <li>购买或订阅问题：请先在 App 的「设置 → 升级 Pro → 恢复购买」同步状态。</li>
+          <li>HealthKit / Apple Watch 数据：请确认系统「健康」权限已允许潮汐肌语读取对应数据。</li>
+          <li>天气建议：天气信息来自 Apple WeatherKit，需要允许定位权限后才会更新。</li>
+          <li>照片分析：照片分析在设备端完成，不会发送到第三方 AI 服务。</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>法律信息</h2>
+        <p><a href="./privacy.html">Privacy Policy / 隐私政策</a></p>
+        <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA) / 用户协议</a></p>
+      </article>
+    </section>
+
+    <p class="footer">潮汐肌语是周期护肤日记和健康记录工具，不提供医疗诊断或治疗建议。</p>
   </main>
 </body>
 </html>
